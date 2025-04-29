@@ -294,7 +294,7 @@ def main():
         with col2:
             if st.button("📝 Start New FIR"):
                 st.session_state.page = 'query'
-                st.experimental_rerun()
+                st.rerun()
 
     # Query Form Page
     elif st.session_state.page == 'query':
@@ -370,13 +370,13 @@ def main():
                         }
                         
                         st.session_state.page = 'result'
-                        st.experimental_rerun()
+                        st.rerun()
                 else:
                     st.warning("Please enter a case description.")
         with col2:
             if st.button("🏠 Back to Home"):
                 st.session_state.page = 'home'
-                st.experimental_rerun()
+                st.rerun()
     
     # Results Page
     elif st.session_state.page == 'result' and st.session_state.fir_data:
@@ -408,11 +408,11 @@ def main():
         with col1:
             if st.button("📝 Create New FIR"):
                 st.session_state.page = 'query'
-                st.experimental_rerun()
+                st.rerun()
         with col2:
             if st.button("🏠 Return to Home"):
                 st.session_state.page = 'home'
-                st.experimental_rerun()
+                st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
     
     # Close main container
